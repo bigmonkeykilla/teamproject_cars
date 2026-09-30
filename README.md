@@ -1,3 +1,8 @@
 ﻿# teamproject_cars
-CLASS PROJECT
-\
+***CLASS PROJECT***
+-------------------------------
+John Fernan
+Tai Tran
+Daniel Nguyen
+Brianna Nguyen
+-------------------------------
