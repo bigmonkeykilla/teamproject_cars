@@ -1,7 +1,8 @@
+import os
 import csv
 
-FILE_NAME = "cars_info.csv"
-
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+FILE_NAME = os.path.join(SCRIPT_DIR, 'cars_info.csv')
 
 def display_menu():
     print("The Car Dealership program V2")
@@ -23,17 +24,18 @@ def read_cars():
     with open(FILE_NAME, newline="") as file:
         reader = csv.reader(file)
         for row in reader:
-            my_cars.append(row)
+            if len(row) > 0 and len(row) == 3:
+                my_cars.append(row)
 
     return my_cars
 
 def list_cars(my_car_2d_list):
     if len(my_car_2d_list) == 0:
-        print("There are no cars in the dealership avaliable.\n")
+        print("There are no more cars in the dealership avaliable.\n")
     else:
         my_cars_number = 1
         for car in my_car_2d_list:
-            print(my_cars_number, car[0], car[1])
+            print(my_cars_number, "Car Model:", car[0], "|", "Year:", car[1], "|", "Condition:", car[2])
             my_cars_number = my_cars_number + 1
 
         print()
