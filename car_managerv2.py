@@ -10,6 +10,7 @@ def display_menu():
     print("list - List all cars")
     print("add  - Add a car")
     print("del  - Delete a car")
+    print("mod  - Modify a car")
     print("exit - Exit program\n")
     print()
 
@@ -61,6 +62,30 @@ def delete_car(my_car_2d_list):
         write_cars(my_car_2d_list)
         print(f"{my_cars[0]} was deleted.\n")
 
+def modify_car(my_car_2d_list):
+    my_cars_number = int(input("Enter the Number of the Car to Modify: "))
+    if my_cars_number < 1 or my_cars_number > len(my_car_2d_list):
+        print("Invalid car number.\n")
+    else:
+        my_car = my_car_2d_list[my_cars_number - 1]
+        print(f"Current Car Model: {my_car[0]}")
+        new_name = input("Enter new name (leave blank to keep current): ")
+        if new_name:
+            my_car[0] = new_name
+
+        print(f"Current Year: {my_car[1]}")
+        new_year = input("Enter new year (leave blank to keep current): ")
+        if new_year:
+            my_car[1] = new_year
+
+        print(f"Current Condition: {my_car[2]}")
+        new_condition = input("Enter new condition (leave blank to keep current): ")
+        if new_condition:
+            my_car[2] = new_condition
+
+        write_cars(my_car_2d_list)
+        print(f"{my_car[0]} was modified.\n")
+
 def main():
     display_menu()
     my_cars = read_cars()
@@ -77,6 +102,8 @@ def main():
             add_car(my_cars)
         elif command.lower() == "del":
             delete_car(my_cars)
+        elif command.lower() == "mod":
+            modify_car(my_cars)
         else:
             print("Not a valid command. Please try again.\n")
 
