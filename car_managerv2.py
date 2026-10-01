@@ -4,41 +4,37 @@ FILE_NAME = "cars_info.csv"
 
 
 def display_menu():
+    print("The Car Dealership program V2")
     print("COMMAND MENU")
     print("list - List all cars")
     print("add  - Add a car")
     print("del  - Delete a car")
     print("exit - Exit program\n")
-
+    print()
 
 def write_cars(my_cars):
     with open(FILE_NAME, "w", newline="") as file:
         writer = csv.writer(file)
         writer.writerows(my_cars)
 
-
 def read_cars():
     my_cars = []
 
-    try:
-        with open(FILE_NAME, newline="") as file:
-            reader = csv.reader(file)
-            for line in reader:
-                my_cars.append(line)
-    except FileNotFoundError:
-        pass
+    with open(FILE_NAME, newline="") as file:
+        reader = csv.reader(file)
+        for row in reader:
+            my_cars.append(row)
 
     return my_cars
 
-
 def list_cars(my_car_2d_list):
     if len(my_car_2d_list) == 0:
-        print("There are no cars in the list.\n")
+        print("There are no cars in the dealership avaliable.\n")
     else:
-        i = 1
-        for my_car in my_car_2d_list:
-            print(i, my_car[0] + " (" + str(my_car[1]) + ")")
-            i += 1
+        my_cars_number = 1
+        for car in my_car_2d_list:
+            print(my_cars_number, car[0], car[1])
+            my_cars_number = my_cars_number + 1
 
         print()
 
@@ -46,42 +42,39 @@ def list_cars(my_car_2d_list):
 def add_car(my_car_2d_list):
     name = input("Name: ")
     year = input("Year: ")
+    condition = input("Condition: ")
 
-    my_car = [name, year]
+    my_car = [name, year, condition]
     my_car_2d_list.append(my_car)
-
     write_cars(my_car_2d_list)
-
     print(f"{my_car[0]} was added.\n")
 
 
 def delete_car(my_car_2d_list):
-    car_number = int(input("Enter the Number of the Car to Delete: "))
-
-    if car_number < 1 or car_number > len(my_car_2d_list):
+    my_cars_number = int(input("Enter the Number of the Car to Delete: "))
+    if my_cars_number < 1 or my_cars_number > len(my_car_2d_list):
         print("Invalid car number.\n")
     else:
-        my_car_2d_list.pop(car_number - 1)
+        my_cars = my_car_2d_list.pop(my_cars_number - 1)
         write_cars(my_car_2d_list)
-        print("Car deleted.\n")
-
+        print(f"{my_cars[0]} was deleted.\n")
 
 def main():
-    my_cars = read_cars()
-
     display_menu()
+    my_cars = read_cars()
 
     while True:
         command = input("Command: ")
 
-        if command == "list":
-            list_cars(my_cars)
-        elif command == "add":
-            add_car(my_cars)
-        elif command == "del":
-            delete_car(my_cars)
-        elif command == "exit":
+        if command.lower() == "exit":
             break
+
+        if command.lower() == "list":
+            list_cars(my_cars)
+        elif command.lower() == "add":
+            add_car(my_cars)
+        elif command.lower() == "del":
+            delete_car(my_cars)
         else:
             print("Not a valid command. Please try again.\n")
 
