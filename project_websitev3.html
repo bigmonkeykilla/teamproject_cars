@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#070a07">
+    <title>Hot Boyz Dealership | Our Team Website</title>
+    <style>
+
+        /* Hot Boyz colors: black, neon green, and flame orange */
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #f4f6f2;
+            background-color: #070a07;
+            background-image:
+                radial-gradient(ellipse at 12% 28%, rgba(67, 225, 22, 0.12), transparent 38%),
+                radial-gradient(ellipse at 90% 65%, rgba(255, 104, 0, 0.09), transparent 39%),
+                repeating-linear-gradient(0deg, transparent 0px, transparent 38px, rgba(110, 255, 62, 0.025) 39px, transparent 40px);
+            background-attachment: fixed;
+        }
+
+        header {
+            background: #000;
+            border-bottom: 3px solid #79ed16;
+            text-align: center;
+            box-shadow: 0 8px 28px rgba(96, 238, 26, 0.16);
+        }
+
+        /* Bigger banner: the entire logo stays visible, without cropping. */
+        .hero-banner {
+            display: block;
+            width: 100%;
+            max-width: 1850px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .hero-intro {
+            padding: 20px 16px 28px;
+            background: linear-gradient(90deg, #060906, #13220b, #060906);
+        }
+
+        .hero-intro h1 {
+            color: #a4ff3c;
+            font-size: clamp(22px, 3vw, 30px);
+            margin: 0 0 9px;
+        }
+
+        .hero-intro p {
+            color: #eeeeee;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: #101410;
+            border-bottom: 1px solid #3e781b;
+            text-align: center;
+            padding: 15px 8px;
+        }
+
+        nav a {
+            color: #a4ff3c;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 17px;
+        }
+
+        nav a:hover { color: #ff9d26; }
+
+        section {
+            background: rgba(16, 23, 16, 0.95);
+            max-width: 980px;
+            padding: 28px 32px;
+            margin: 26px auto;
+            border: 1px solid #335822;
+            border-left: 5px solid #7aeb17;
+            border-radius: 10px;
+            box-shadow: 0 7px 24px rgba(0, 0, 0, 0.22);
+            scroll-margin-top: 85px;
+        }
+
+        h2 { color: #ff9c25; margin-top: 0; }
+        h3 { color: #adff59; margin-bottom: 6px; }
+        p, li { line-height: 1.65; }
+        li { margin-bottom: 7px; }
+
+        .member {
+            padding: 12px 4px;
+            border-bottom: 1px solid #344331;
+        }
+        .member:last-child { border-bottom: none; }
+        .member p { margin: 5px 0; }
+
+        footer {
+            color: #b4c5aa;
+            text-align: center;
+            padding: 18px 12px 28px;
+            border-top: 1px solid #2c4a20;
+        }
+
+        @media (max-width: 650px) {
+            nav a { display: inline-block; margin: 3px 8px; font-size: 14px; }
+            section { margin: 18px 12px; padding: 22px 18px; }
+            .hero-intro { padding: 15px 12px 21px; }
+        }
+    </style>
+</head>
+<body>
+    <header id="home">
+        <img class="hero-banner" src="hot_boyz_green_camaro_dealership_banner.png" alt="Hot Boyz Dealership banner with green 2011 Camaro SS and orange flames">
+        <div class="hero-intro">
+            <h1>Welcome to Hot Boyz Dealership Website!</h1>
+            <p>Meet our team members and learn about how we created this website and about our program!</p>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#members">Team Members</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <section>
+        <h2>Home</h2>
+        <p>Hello! We are a team of four students. We created this website to introduce ourselves and practice using HTML and CSS.</p>
+    </section>
+
+<section id="members">
+<h2>Our Team Members</h2>
+<div class="member">
+<h3>Tai Tran</h3>
+<p>About me: I am a Senior studying Computer Information Systems with a minor in Business Administration. I enjoy coding and learning about AI.</p>
+</div>
+<div class="member">
+<h3>John Fernan</h3>
+<p>About me: Senior year student at Stockton University. I study Computer Information Systems and I enjoy learning about computers and cybersecurity.</p>
+</div>
+<div class="member">
+<h3>Brianna Nguyen</h3>
+<p>About me: I'm a second semester Senior and I study Computer Information Systems at Stockton University. I enjoy doing anything that interests me. </p>
+</div>
+<div class="member">
+<h3>Daniel Nguyen</h3>
+<p>About me: I'm a Senior and I study Computer Informaiton Systems at Stockton University. I enjoy cars and learning how to code.</p>
+</div>
+</section>
+
+<section id="timeline">
+<h2>Timelines</h2>
+<ul>
+<li>Week 1: We created a project plan and formed our team and GitHub repository was setup</li>
+<li>Week 2: We put together our basic code structure from what we learned in class using CSV files and entry into said files(modifying actions).</li>
+<li>Week 3: "Bugs" were identified and addressed and code was further refined.</li>
+<li>Week 4: New tools were learned and we experimented with them. (text-to-speech, gui)</li>
+<li>Week 5: Website was developed and tested. New tools were implemented into our project(gui and text-to-speech).</li>
+</ul></section>
+
+<section id="about">
+<h2>About Our Project</h2>
+<p>
+	Our group created a Car Dealership Management System
+	using Python. The program allows users to view,
+	add, modify, and delete cars.
+	</p>
+<p>
+	We used Tkinter to create the interface and a CSV
+	file to save car information. We also added a
+	text-to-speech feature that reads instructions
+	out loud.
+	</p>
+<p>
+	Our goal was to create a simple and easy-to-use
+	program using the tools we learned from class
+	while learning more about Python.
+	</p>
+</section>
+
+    <footer>
+        <p>Created by Tai Tran, John Fernan, Brianna Nguyen, and Daniel Nguyen</p>
+    </footer>
+</body>
+</html>
